@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Coding App Challenge James Calma</string>
+    <string name="internet_unavailable">Internet connection is not available</string>
 </resources>
