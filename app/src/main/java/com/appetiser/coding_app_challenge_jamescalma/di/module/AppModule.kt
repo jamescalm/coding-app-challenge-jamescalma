@@ -13,7 +13,7 @@ import javax.inject.Singleton
 class AppModule {
     @Provides
     @Singleton
-    fun providesCodingApplication(app: Application) :TrackListApp = app as TrackListApp
+    fun providesTrackListApplication(app: Application) :TrackListApp = app as TrackListApp
 
     @Provides
     @Singleton

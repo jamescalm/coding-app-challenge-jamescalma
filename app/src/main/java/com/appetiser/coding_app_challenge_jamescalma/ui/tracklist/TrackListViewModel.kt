@@ -33,6 +33,7 @@ class TrackListViewModel @Inject constructor(private val trackHttp: TrackHttp) :
 
     val TAG = "TrackListVM"
 
+    /** This function gets the value list of tracks from the API endpoint*/
     fun getTrackList(){
         trackHttp.getTracks()
             .subscribeOn(Schedulers.io())
@@ -54,12 +55,14 @@ class TrackListViewModel @Inject constructor(private val trackHttp: TrackHttp) :
 
     }
 
+    /** This function saves the trackId*/
     fun saveRecentTracks(unique: String){
         _unique.value = unique
         TrackListApp.sharedPreferences?.edit {
             putString(Constants.PREF_RECENT_TRACKS, unique)
         }
     }
+    /** This function saves the collectionId*/
     fun saveRecentTrackCollection(collection: String){
         TrackListApp.sharedPreferences?.edit {
             putString(Constants.PREF_RECENT_TRACKS_COLLECTION, collection)

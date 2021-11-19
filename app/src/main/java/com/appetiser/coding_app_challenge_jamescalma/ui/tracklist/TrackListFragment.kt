@@ -63,6 +63,7 @@ class TrackListFragment : Fragment(), TrackAdapter.OnTrackClickListener {
         binding.recentRV.adapter = recentListAdapter
     }
 
+    /** This function will observe the live data from the viewModel*/
     private fun setupObservers(){
         viewModel.trackList.observe(viewLifecycleOwner, {
             if (it.results != null) {
@@ -87,6 +88,7 @@ class TrackListFragment : Fragment(), TrackAdapter.OnTrackClickListener {
         })
     }
 
+    /** This function sets up the Tracker Adapter(full list of tracks)*/
     private fun initTrackAdapter(tracks: List<Track>){
         if(trackAdapter == null) {
             trackAdapter = context?.let { TrackAdapter(it, tracks, this) }
@@ -97,6 +99,7 @@ class TrackListFragment : Fragment(), TrackAdapter.OnTrackClickListener {
         }
     }
 
+    /** This function sets up the recentList Adapter(Persistence function)*/
     private fun initRecentList(tracks: List<Track>){
         var recentTrack = TrackListApp.sharedPreferences?.getString(Constants.PREF_RECENT_TRACKS,"")
         var recentCollectionId = TrackListApp.sharedPreferences?.getString(Constants.PREF_RECENT_TRACKS_COLLECTION,"")
@@ -117,6 +120,8 @@ class TrackListFragment : Fragment(), TrackAdapter.OnTrackClickListener {
         }
     }
 
+    /** This function is the click listener of the TrackAdapter when the user taps on a single adapter
+     * It also calls the functions that save the trackId and collectionId for the Persistence Function*/
     override fun onTrackClicked(track: Track) {
         viewModel.saveRecentTracks(track.trackId.toString())
         viewModel.saveRecentTrackCollection(track.collectionId.toString())

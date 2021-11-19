@@ -1,5 +1,6 @@
 package com.appetiser.coding_app_challenge_jamescalma.util
 
+/** This class is used for the loaders so the user won't have a blank page while the app loads data from API*/
 data class LoadingState(val status: Status, val message: String?) {
 
     companion object {
