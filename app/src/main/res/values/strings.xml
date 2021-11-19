@@ -1,4 +1,8 @@
 <resources>
     <string name="app_name">Coding App Challenge James Calma</string>
     <string name="internet_unavailable">Internet connection is not available</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="track_list">Track List</string>
+    <string name="recent_list">Recently Selected</string>
 </resources>

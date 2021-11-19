@@ -3,6 +3,7 @@ package com.appetiser.coding_app_challenge_jamescalma.di.component
 import android.app.Application
 import com.appetiser.coding_app_challenge_jamescalma.TrackListApp
 import com.appetiser.coding_app_challenge_jamescalma.di.builder.ActivityBuilder
+import com.appetiser.coding_app_challenge_jamescalma.di.builder.FragmentBuilder
 import com.appetiser.coding_app_challenge_jamescalma.di.module.AppModule
 import com.appetiser.coding_app_challenge_jamescalma.di.module.NetModule
 import com.appetiser.coding_app_challenge_jamescalma.di.module.ViewModelModule
@@ -18,7 +19,8 @@ import javax.inject.Singleton
         AppModule::class,
         NetModule::class,
         ViewModelModule::class,
-        ActivityBuilder::class
+        ActivityBuilder::class,
+        FragmentBuilder::class
     ]
 )
 

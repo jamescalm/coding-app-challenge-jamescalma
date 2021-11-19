@@ -5,6 +5,7 @@ import android.app.Application
 import android.content.Context
 import android.content.SharedPreferences
 import android.net.ConnectivityManager
+import androidx.appcompat.app.AppCompatDelegate
 import androidx.fragment.app.Fragment
 import com.appetiser.coding_app_challenge_jamescalma.di.component.DaggerAppComponent
 import com.mcxiaoke.koi.ext.toast
@@ -28,6 +29,7 @@ class TrackListApp : Application(), HasActivityInjector, HasSupportFragmentInjec
         super.onCreate()
         setupComponents()
         sharedPreferences = getSharedPreferences("tracklistapp.pref", Context.MODE_PRIVATE)
+        AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
     }
 
     private fun setupComponents(){

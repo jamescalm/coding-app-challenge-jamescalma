@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/track_navigation"
+    app:startDestination="@id/trackListFragment">
+
+    <fragment
+        android:id="@+id/trackListFragment"
+        android:name="com.appetiser.coding_app_challenge_jamescalma.ui.tracklist.TrackListFragment"
+        android:label="fragment_track_list"
+        tools:layout="@layout/fragment_track_list" >
+        <action
+            android:id="@+id/action_trackListFragment_to_trackDetailFragment"
+            app:destination="@id/trackDetailFragment"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"/>
+    </fragment>
+    <fragment
+        android:id="@+id/trackDetailFragment"
+        android:name="com.appetiser.coding_app_challenge_jamescalma.ui.trackdetail.TrackDetailFragment"
+        android:label="fragment_track_detail"
+        tools:layout="@layout/fragment_track_detail" >
+        <argument
+            android:name="track"
+            app:argType="com.appetiser.coding_app_challenge_jamescalma.model.Track" />
+        <action
+            android:id="@+id/action_trackDetailFragment_to_trackListFragment"
+            app:destination="@id/trackListFragment"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left" />
+
+    </fragment>
+</navigation>
