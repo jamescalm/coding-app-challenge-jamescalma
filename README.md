@@ -26,3 +26,6 @@ letting the user know he/she added the track to cart.
 For the persistence function, I decided to save the last selected track by the user. I used both the trackId and collectionId since not
 all tracks has a trackId. I saved them both in the sharedPreferences and when the users opens the app, I get the data from shared
 Preference and show the last track selected by the users.
+
+You can look at the git logs of the project to see when I started the project and also incorporated basic pushing to an online
+repo. Used Git Extensions as repository manager since I'm familiar with using it.
